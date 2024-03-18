@@ -6,9 +6,9 @@ Task 11 - Zooms in on the elements of the input tuple
 from typing import Tuple, List
 
 
-def zoom_array(lst: Tuple, factor: int = 2) -> Tuple:
+def zoom_array(lst: Tuple, factor: int = 2) -> List:
     """
     returns a new tuple with zoomed-in elements.
     """
-    zoomed_in: Tuple = tuple(item for item in lst for _ in range(factor))
+    zoomed_in: List = [item for item in lst for _ in range(factor)]
     return zoomed_in
