@@ -8,7 +8,7 @@ import asyncio
 import time
 
 
-def measure_time(n :int, max_delay: int) -> float:
+def measure_time(n: int, max_delay: int) -> float:
     """
      Measure how long it takes to run a number of coroutines
     """
