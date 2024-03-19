@@ -4,10 +4,10 @@ Task 0 - Write a coroutine called async_generator that takes no arguments.
 """
 import asyncio
 import random
-from typing import AsyncGenerator
+from typing import Generator
 
 
-async def async_generator() -> AsyncGenerator[float, None]:
+async def async_generator() -> Generator[float, None, None]: # type: ignore
     """
      Generate 10 numbers at regular intervals
     """

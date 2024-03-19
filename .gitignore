@@ -1,6 +1,7 @@
 # directories
 __pycache__
 .mypy_cache
+pycodestyle_env
 
 # files
 main.py
