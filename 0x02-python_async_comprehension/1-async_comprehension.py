@@ -5,7 +5,8 @@ Task 1 - Import async_generator from the previous task and then
 from typing import Generator
 
 
-async def async_comprehension() -> Generator[float, None, None]:  # type: ignore
+async def async_comprehension() -> \
+        Generator[float, None, None]:  # type: ignore
     """
     Return a list of numbers generated at regular interval.
     """
