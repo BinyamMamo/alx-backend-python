@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
 Task 1 - Import async_generator from the previous task and then
+write a coroutine called async_comprehension that takes no arguments.
 """
-from typing import Generator
+from typing import List
 
 
-async def async_comprehension() -> \
-        Generator[float, None, None]:  # type: ignore
+async def async_comprehension() -> List[float]:
     """
     Return a list of numbers generated at regular interval.
     """
