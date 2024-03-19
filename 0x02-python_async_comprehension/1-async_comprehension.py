@@ -3,10 +3,10 @@
 Task 1 - Import async_generator from the previous task and then
 """
 import asyncio
-from typing import AsyncGenerator
+from typing import Generator
 
 
-async def async_comprehension() -> AsyncGenerator[float, None]:
+async def async_comprehension() -> Generator[float, None, None]:  # type: ignore
     """
     Return a list of numbers generated at regular interval.
     """
