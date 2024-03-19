@@ -8,7 +8,7 @@ import asyncio
 import time
 
 
-async def measure_runtime():
+async def measure_runtime() -> float:
     """
      Measures the runtime of async_comprehension by running it 4 times.
     """
