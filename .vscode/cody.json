@@ -1,0 +1,43 @@
+{
+  "commit-message": {
+    "description": "Commit message for current changes",
+    "prompt": "Suggest an informative commit message by summarizing code changes from the shared command output. The commit message should follow the conventional commit format and provide meaningful context for future readers",
+    "mode": "insert",
+    "context": {
+      "selection": false,
+      "command": "git add --all; git diff --cached"
+    }
+  },
+  "fundoc": {
+    "prompt": "document the function briefly explained without including Args: and Returns: in the documentation and place it below the function definition in the code and the docstring and everything inside the function should be indented with 4 spaces more than the function definition",
+    "mode": "edit",
+    "context": {
+      "codebase": false,
+      "selection": true
+    }
+  },
+  "classdoc": {
+    "prompt": "document the class very briefly and return the docstring only and don't add new line after the docstring and place it before the class definition",
+    "mode": "insert",
+    "context": {
+      "codebase": false,
+      "selection": true
+    }
+  },
+  "document": {
+    "prompt": "document every function and every class in the selection. add a module level documentation at the top of the file",
+    "mode": "insert",
+    "context": {
+      "codebase": false,
+      "selection": true
+    }
+  },
+  "annotate": {
+    "prompt": "add type annotations to every datatype",
+    "mode": "insert",
+    "context": {
+      "codebase": false,
+      "selection": true
+    }
+  }
+}
