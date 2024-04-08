@@ -93,13 +93,42 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         """Tear down class fixtures"""
         cls.get_patcher.stop()
 
-    def test_public_repos(self):
+    @patch('client.get_json')
+    def test_public_repos(self, mocked_get_json):
         """tests public repos"""
-        pass
+        with patch('client.GithubOrgClient._public_repos_url',
+                   new_callable=PropertyMock) as mocked_public_repos_url:
+            expected_payload = [{"name": "Repo1"}, {"name": "Repo2"}]
+            mocked_get_json.return_value = expected_payload
 
-    def test_public_repos_with_license(self):
-        """test public repos with license"""
-        pass
+            org_client = GithubOrgClient('myorg')
+            repos = org_client.public_repos()
+
+            mocked_public_repos_url.assert_called_once()
+            mocked_get_json.assert_called_once()
+
+            self.assertEqual(repos, expected_payload)
+
+    @patch('client.get_json')
+    def test_public_repos_with_license(self, mocked_get_json):
+        """
+        Test public repos with license
+        """
+        with patch('client.GithubOrgClient._public_repos_url',
+                   new_callable=PropertyMock) as mocked_public_repos_url:
+            expected_payload = [
+                {"name": "Repo1", "license": {"key": "apache-2.0"}},
+                {"name": "Repo2", "license": {"key": "apache-2.0"}}
+            ]
+            mocked_get_json.return_value = expected_payload
+
+            org_client = GithubOrgClient('myorg')
+            repos = org_client.public_repos(license="apache-2.0")
+
+            mocked_public_repos_url.assert_called_once()
+            mocked_get_json.assert_called_once()
+
+            self.assertEqual(repos, expected_payload)
 
 
 if __name__ == '__main__':
