@@ -5,12 +5,12 @@ Tests for client.py
 """
 
 import unittest
-from urllib import response
+from client import GithubOrgClient
+from fixtures import TEST_PAYLOAD
 from parameterized import parameterized, parameterized_class
 from unittest import mock
 from unittest.mock import patch, Mock, PropertyMock
-from client import GithubOrgClient
-from fixtures import TEST_PAYLOAD
+from urllib import response
 
 
 class TestGithubOrgClient(unittest.TestCase):
