@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Tasks 4 - 8
+Tasks 4 - 9
 Tests for client.py
 """
 
@@ -11,11 +11,6 @@ from unittest import mock
 from unittest.mock import patch, Mock, PropertyMock
 from client import GithubOrgClient
 from fixtures import TEST_PAYLOAD
-
-
-"""
-Tests for client.py
-"""
 
 
 class TestGithubOrgClient(unittest.TestCase):
