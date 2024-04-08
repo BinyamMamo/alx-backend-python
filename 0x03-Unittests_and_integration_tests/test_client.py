@@ -8,7 +8,6 @@ import unittest
 from client import GithubOrgClient
 from fixtures import TEST_PAYLOAD
 from parameterized import parameterized, parameterized_class
-from unittest import mock
 from unittest.mock import patch, Mock, PropertyMock
 from urllib import response
 
