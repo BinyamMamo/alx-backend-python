@@ -12,7 +12,14 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Checking out source code from GitHub...'
-                checkout scm
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/main']], // <-- Explicit branch
+                    userRemoteConfigs: [[
+                        url: 'https://github.com/BinyamMamo/alx-backend-python.git',
+                        credentialsId: 'github-credentials' // <-- Explicit credentialsId
+                    ]]
+                ])
             }
         }
         
